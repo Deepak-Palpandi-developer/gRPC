@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package folderModel;
+
+import "ProtoModels/EmailModel.proto";
+
+message FolderDto {
+    int64 Id = 1;
+    bool IsActive = 2;
+    string Name = 3;
+    int64 UserId = 4;
+    repeated emailModel.EmailDto Emails = 5;
+    string DisplayDateCreated = 6;
+    bool IsDefault = 7;
+    string DisplayLastModified = 8;
+    int32 EmailCount = 9;
+    bool IsArchived = 10;
+    bool IsShared = 11;
+}

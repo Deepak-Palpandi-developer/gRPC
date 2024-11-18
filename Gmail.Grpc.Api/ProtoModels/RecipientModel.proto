@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package recipientModel;
+
+import "google/protobuf/timestamp.proto";
+
+
+enum RecipientType {
+    TO = 0;
+    CC = 1;
+    BCC = 2;
+}
+
+message RecipientDto {
+    int64 Id = 1;
+    bool IsActive = 2;
+    int64 EmailId = 3;
+    int64 UserId = 4;
+    RecipientType Type = 5;
+    bool HasRead = 6;
+    string DisplayDateRead = 7;
+    string DisplayDateReceived = 8;
+    string RecipientEmail = 9;
+    bool IsStarred = 10;
+    bool IsArchived = 11;
+    bool IsDeleted = 12;
+} 

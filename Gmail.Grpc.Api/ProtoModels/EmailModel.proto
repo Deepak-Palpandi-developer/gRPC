@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package emailModel;
+
+import "ProtoModels/RecipientModel.proto";
+
+message EmailDto {
+    int64 Id = 1;
+    bool IsActive = 2;
+    int64 SenderId = 3;
+    string Subject = 4;
+    string Body = 5;
+    string DisplayDateSent = 6;
+    string DisplayDateReceived = 7;
+    string DisplayDateRead = 8;
+    repeated recipientModel.RecipientDto Recipients = 9;
+    bool IsRead = 10;
+    bool IsStarred = 11;
+    bool IsDraft = 12;
+    string ImportanceLevel = 13;
+    string AttachmentPath = 14;
+    repeated string Tags = 15;
+    bool HasAttachments = 16;
+    string MimeType = 17;
+    string ReplyTo = 18;
+    repeated EmailDto ForwardedEmails = 19;
+    bool IsSpam = 20;
+    bool IsArchived = 21;
+}

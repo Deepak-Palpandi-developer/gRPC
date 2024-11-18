@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package contactModel;
+
+message ContactDto {
+    int64 Id = 1;
+    bool IsActive = 2;
+    int64 UserId = 3;
+    string ContactName = 4;
+    string ContactEmail = 5;
+    string PhoneNumber = 6;
+    string DisplayDateAdded = 7;
+    string Notes = 8;
+}

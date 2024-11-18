@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "Gmail.User";
+
+package user;
+
+import "ProtoModels/UserModel.proto";
+import "google/protobuf/empty.proto";
+
+message GetUserRequest {
+    int64 UserId = 1;
+}
+
+message CreateUserRequest {
+    userModel.UserDto user = 1;
+}
+
+message ResponseModel {
+    bool IsSuccess = 1;
+    string Message = 2;
+    string Token = 3;
+    userModel.UserDto user = 4;
+    repeated userModel.UserDto users = 5;
+}
+
+message LoginRequest{
+    string Email = 1;
+    string Password = 2;
+}
+
+service UserProto {
+    rpc GetUser (GetUserRequest) returns (ResponseModel);
+    rpc GetUsers (google.protobuf.Empty) returns (ResponseModel);
+    rpc CreateUser (CreateUserRequest) returns (ResponseModel);
+    rpc LoginUser (LoginRequest) returns (ResponseModel);
+}

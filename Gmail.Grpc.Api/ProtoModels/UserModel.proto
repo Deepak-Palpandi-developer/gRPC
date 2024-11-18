@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package userModel;
+
+import "ProtoModels/FolderModel.proto";
+import "ProtoModels/ContactModel.proto";
+
+message UserDto {
+    int64 Id = 1;
+    bool IsActive = 2;
+    string Username = 3;
+    string EmailAddress = 4;
+    string Password = 5;
+    string FirstName = 6;
+    string LastName = 7;
+    int32 BirthMonth = 8;
+    int32 BirthDay = 9;
+    int32 BirthYear = 10;
+    string Gender = 11;
+    string PhoneNumber = 12;
+    string PrefixPhoneNumber = 13;
+    string DiplayLastLogin = 14;
+    string BithDate = 15;
+    string ProfilePictureUrl = 16;
+    repeated folderModel.FolderDto Folders = 17;
+    repeated contactModel.ContactDto Contacts = 18;
+}
